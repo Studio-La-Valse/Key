@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents an immutable persistent element, equatable by element id.
     /// </summary>
-    public abstract class PersistentElement : IEquatable<PersistentElement>
+    public class PersistentElement : IEquatable<PersistentElement>
     {
         /// <summary>
         /// The element id.
@@ -47,5 +47,39 @@
         {
             return ElementId.GetHashCode();
         }
+
+
+        /// <summary>
+        /// Equality comparer for two element id's.
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
+        public static bool operator ==(PersistentElement first, PersistentElement second)
+        {
+            if (first is null && second is null)
+            {
+                return true;
+            }
+
+            if (first is null || second is null)
+            {
+                return false;
+            }
+
+            return first.ElementId == second.ElementId;
+        }
+
+        /// <summary>
+        /// Inequality comparer for two element ids.
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
+        public static bool operator !=(PersistentElement first, PersistentElement second)
+        {
+            return !(first == second);
+        }
+
     }
 }
