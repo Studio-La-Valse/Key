@@ -66,7 +66,7 @@
         /// <param name="first"></param>
         /// <param name="second"></param>
         /// <returns></returns>
-        public static bool operator ==(ElementId first, ElementId second)
+        public static bool operator ==(ElementId? first, ElementId? second)
         {
             if (first is null && second is null)
             {
@@ -87,7 +87,7 @@
         /// <param name="first"></param>
         /// <param name="second"></param>
         /// <returns></returns>
-        public static bool operator !=(ElementId first, ElementId second)
+        public static bool operator !=(ElementId? first, ElementId? second)
         {
             return !(first == second);
         }

@@ -55,7 +55,7 @@
         /// <param name="first"></param>
         /// <param name="second"></param>
         /// <returns></returns>
-        public static bool operator ==(PersistentElement first, PersistentElement second)
+        public static bool operator ==(PersistentElement? first, PersistentElement? second)
         {
             if (first is null && second is null)
             {
@@ -76,7 +76,7 @@
         /// <param name="first"></param>
         /// <param name="second"></param>
         /// <returns></returns>
-        public static bool operator !=(PersistentElement first, PersistentElement second)
+        public static bool operator !=(PersistentElement? first, PersistentElement? second)
         {
             return !(first == second);
         }
